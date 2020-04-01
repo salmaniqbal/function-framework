@@ -10,3 +10,8 @@ steps:
   - '.'
   - '-r'
   - 'requirements.txt'
+- name: python:3.7
+  id: RUN-UNIT-TESTS
+  entrypoint: pytest
+  args:
+  - '*_test.py'
