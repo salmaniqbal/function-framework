@@ -8,3 +8,5 @@ steps:
   - name: 'gcr.io/$PROJECT_ID/python-cloudbuild'
     entrypoint: 'venv/bin/python'
     args: ['-m', 'pytest', '-v']
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: ['functions', 'deploy', 'hello_http', '--source=.', '--trigger-http']
