@@ -22,6 +22,10 @@ Run function locally using following command:
 
 Open [http://localhost:8080](http://localhost:8080) in your browser and see the response.
 
+Run tests by using `pytest`:
+
+`pytest test_script.py`
+
 ## Deploy to Cloud
 
 You can use gcloud on your machine to deploy to cloud from your terminal of choice. Install gcloud sdk from [here](https://cloud.google.com/sdk/install).
