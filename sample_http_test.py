@@ -17,4 +17,4 @@ def test_print_hello_world():
     req = Mock(get_json=Mock(return_value=data), args=data)
 
     # Call tested function
-    assert main.hello_http(req) == 'Hello World!'
+    assert main.hello_http(req) == 'Hello World'
