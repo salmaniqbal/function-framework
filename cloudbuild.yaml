@@ -1,12 +1,16 @@
 steps:
   - name: 'gcr.io/$PROJECT_ID/python-cloudbuild'
+    id: SET-VENV
     entrypoint: '/bin/bash'
     args: ['-c','virtualenv /workspace/venv']
   - name: 'gcr.io/$PROJECT_ID/python-cloudbuild'
+    id: INSTALL-DEPENDENCIES
     entrypoint: 'venv/bin/pip'
     args: ['install', '-V', '-r', 'requirements.txt']  
   - name: 'gcr.io/$PROJECT_ID/python-cloudbuild'
+    id: RUN-UNITTESTS
     entrypoint: 'venv/bin/python'
     args: ['-m', 'pytest', '-v']
   - name: 'gcr.io/cloud-builders/gcloud'
+    id: DEPLOY-FUNCTION
     args: ['functions', 'deploy', 'hello_http', '--source=.', '--trigger-http']
